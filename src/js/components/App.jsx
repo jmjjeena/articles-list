@@ -7,7 +7,7 @@ const App = () => (
       <h2>Articles</h2>
       <List />
     </div>
-  </div>;
+  </div>
 );
 
 export default App;
