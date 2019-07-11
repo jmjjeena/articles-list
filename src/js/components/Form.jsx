@@ -36,7 +36,7 @@ class ConnectedForm extends Component {
   }
 
   render() {
-    const title = this.state;
+    const { title } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="form-group">
