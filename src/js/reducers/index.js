@@ -1,4 +1,4 @@
-import { ADD_ARTICLE } from "../constants/action-types";
+import { ADD_ARTICLE, FOUND_BAD_WORD } from "../constants/action-types";
 
 const initialState = {
   articles: []
@@ -9,6 +9,9 @@ function rootReducer(state = initialState, action) {
     return Object.assign({}, state, {
       articles: state.articles.concat(action.payload)
     });
+  }
+  if (action.type === FOUND_BAD_WORD) {
+    return console.log("Hey! That was a bad word!");
   }
   return state;
 }
