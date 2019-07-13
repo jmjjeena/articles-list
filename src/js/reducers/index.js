@@ -1,7 +1,8 @@
 import { ADD_ARTICLE, FOUND_BAD_WORD } from "../constants/action-types";
 
 const initialState = {
-  articles: []
+  articles: [],
+  alert: false
 };
 
 function rootReducer(state = initialState, action) {
@@ -11,7 +12,10 @@ function rootReducer(state = initialState, action) {
     });
   }
   if (action.type === FOUND_BAD_WORD) {
-    return console.log("Hey! That was a bad word!");
+    return Object.assign({}, state, {
+      // replaces the existing key
+      alert: action.payload
+    });
   }
   return state;
 }
